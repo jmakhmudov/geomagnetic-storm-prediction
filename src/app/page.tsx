@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main className="px-8 relative h-screen">
       <Navbar />
-      <h1 className=" mt-10  text-4xl">High intensity storm</h1>
-      <img className="scale-150" src="/sun(1).svg" alt="" />
+      <h1 className=" my-5  text-4xl text-center">High intensity storm</h1>
+      <img className="scale-150 absolute -right-40" src="/sun(1).svg" alt="" />
 
       <div className="absolute bottom-10 text-sm z-10">
         <p>Kp index</p>
