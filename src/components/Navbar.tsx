@@ -35,7 +35,7 @@ const Navbar = () => {
                 }
             </div>
 
-            <section className={`absolute left-0 right-0 top-0 bottom-0 ${isMenuOpen ? "opacity-100" : "opacity-0"} grid place-items-center bg-[#03000F] z-40 transition-opacity duration-300`}>
+            <section className={`fixed left-0 right-0 top-0 bottom-0 ${isMenuOpen ? "opacity-100" : "opacity-0"} grid place-items-center bg-[#03000F] bg-opacity-90 backdrop-blur-sm z-40 transition-opacity duration-300`}>
                 <ul className="grid place-items-center gap-10 font-bold text-4xl">
                     <Link className="navlinks" href="/kp">
                         Kp index
