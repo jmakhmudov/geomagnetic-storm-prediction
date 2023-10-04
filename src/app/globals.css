@@ -22,7 +22,7 @@ body {
 }
 
 main {
-  @apply px-8 relative h-screen pt-10;
+  @apply px-8 relative h-screen mt-20;
 }
 
 h1 {
