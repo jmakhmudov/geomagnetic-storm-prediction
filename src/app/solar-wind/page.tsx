@@ -68,7 +68,7 @@ const SolarWind = () => {
                         <h1>Solar Wind</h1>
                         <p className="opacity-60 text-xs">{solarWind[lastIdx] ? `Last update at ${solarWind[lastIdx][0]} UTC` : ""}</p>
                     </div>
-                    <UpdateIcon className={`cursor-pointer rotate-[${refresh}deg] duration-200`} onClick={() => setRefresh(refresh ? 0 : 360)} />
+                    <UpdateIcon className={`cursor-pointer rotate-[${refresh}deg] transition-transform duration-500`} onClick={() => setRefresh(refresh ? 0 : 360)} />
                 </div>
 
                 <section className="mt-10 flex flex-col lg:flex-row lg:justify-between lg:items-center">
