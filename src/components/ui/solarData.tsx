@@ -17,7 +17,7 @@ const arrows = [
     <ArrowUp key="arrow-up" className="text-green-400" />
 ];
 
-const sign = ["", "-", "+"];
+const sign = ["", "", "+"];
 const colors = ["", "text-red-700", "text-green-400"];
 
 const SolarData = ({ title, data, trend, changed }: SolarProps) => {
@@ -28,7 +28,7 @@ const SolarData = ({ title, data, trend, changed }: SolarProps) => {
             <section className="flex items-center">
                 <div className="text-5xl font-extrabold">{data}</div>
                 {arrows[trend]}
-                <div className={`${colors[trend]} text-lg`}>{sign[trend]} {changed}</div>
+                <div className={`${colors[trend]} text-lg`}>{sign[trend]} {changed ? changed : ""}</div>
             </section>
         </div>
     );

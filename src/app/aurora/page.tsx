@@ -13,12 +13,12 @@ const Aurora = () => {
 
                     <div className="font-semibold grid gap-5">
                         <h2>Nothern Semisphere</h2>
-                        <img src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg" alt="Nothern Semisphere" />
+                        <img className="lg: w-[600px]" src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg" alt="Nothern Semisphere" />
                     </div>
 
                     <div className="font-semibold grid gap-5">
                         <h2>Southern Semisphere</h2>
-                        <img src="https://services.swpc.noaa.gov/images/animations/ovation/south/latest.jpg" alt="Southern Semisphere" />
+                        <img className="lg: w-[600px]" src="https://services.swpc.noaa.gov/images/animations/ovation/south/latest.jpg" alt="Southern Semisphere" />
                     </div>
 
                 </section>
