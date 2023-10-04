@@ -32,8 +32,8 @@ const SolarWind = () => {
         </section>
     )
 
-    const renderSkeleton = () => (
-        <section className="grid gap-2">
+    const renderSkeleton = (key: number) => (
+        <section key={key} className="grid gap-2">
             <Skeleton className="w-[80px] h-4" />
             <Skeleton className="w-[120px] h-10" />
         </section>
@@ -53,7 +53,7 @@ const SolarWind = () => {
                 </div>
 
                 <section className="mt-10 grid gap-14">
-                    {Array.from({length: 3}).map(() => renderSkeleton())}
+                    {Array.from({length: 3}).map((el, i) => renderSkeleton(i))}
                 </section>
             </section>
         </main>
