@@ -18,8 +18,20 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-rgb);
+  width: 100vw;
 }
 
+main {
+  @apply px-8 relative h-screen pt-10;
+}
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+.page-main-section {
+  @apply mt-10 mb-20;
+}
 
 .menu {
   background-color: transparent;

@@ -20,8 +20,8 @@ const Navbar = () => {
 
 
     return (
-        <nav className="py-4 flex justify-between items-center">
-            <Link href="/" className="font-orbitron text-xl z-50">
+        <nav className="py-4 flex justify-between items-center fixed top-0 left-0 right-0 px-8 bg-[#03000F] z-50">
+            <Link href="/" className="font-orbitron text-xl z-50 cursor-pointer">
                 GEOMAG
             </Link>
 
@@ -35,18 +35,18 @@ const Navbar = () => {
                 }
             </div>
 
-            <section className={`fixed left-0 right-0 top-0 bottom-0 ${isMenuOpen ? "opacity-100" : "opacity-0"} grid place-items-center bg-[#03000F] bg-opacity-90 backdrop-blur-sm z-40 transition-opacity duration-300`}>
+            <section className={`fixed left-0 right-0 top-0 bottom-0 ${isMenuOpen ? "opacity-100 z-40" : "opacity-0 -z-10"} grid place-items-center bg-[#03000F] bg-opacity-90 backdrop-blur-sm z-40 transition-opacity duration-300`}>
                 <ul className="grid place-items-center gap-10 font-bold text-4xl">
-                    <Link className="navlinks" href="/kp">
+                    <Link onClick={toggleMenu} className="navlinks" href="/kp">
                         Kp index
                     </Link>
-                    <Link className="navlinks" href="/solar-wind">
+                    <Link onClick={toggleMenu} className="navlinks" href="/solar-wind">
                         Solar wind
                     </Link>
-                    <Link className="navlinks" href="/aurora">
+                    <Link onClick={toggleMenu} className="navlinks" href="/aurora">
                         Aurora
                     </Link>
-                    <Link className="navlinks" href="/about">
+                    <Link onClick={toggleMenu} className="navlinks" href="/about">
                         About
                     </Link>
                 </ul>
