@@ -1,6 +1,4 @@
 import Navbar from "@/components/Navbar";
-import { useEffect } from "react";
-import axios from "axios";
 
 const Aurora = () => {
 
@@ -9,6 +7,7 @@ const Aurora = () => {
             <Navbar />
             <section className="page-main-section">
                 <h1>Aurora - 30 Minute Forecast</h1>
+
                 <p className="opacity-70 text-sm mt-4 z-0 max-w-lg">This is a short-term forecast of the location and intensity of the aurora.  This product is based on the OVATION model and provides a 30 to 90 minute forecast of the location and intensity of the aurora.  The forecast lead time is the time it takes for the solar wind to travel from the L1 observation point to Earth.</p>
                 <section className="mt-10 flex gap-20 flex-col sm:flex-row">
 

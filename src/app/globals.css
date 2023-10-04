@@ -24,18 +24,15 @@ body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-rgb);
   max-width: 100dvw;
+  overflow-x: hidden;
 }
 
 main {
-  @apply px-8 relative;
+  @apply px-8 pt-20;
 }
 
 h1 {
-  @apply text-2xl font-bold;
-}
-
-.page-main-section {
-  @apply mt-10;
+  @apply text-4xl font-bold;
 }
 
 .menu {
