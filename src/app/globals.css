@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: #03000F;
@@ -18,11 +23,11 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-rgb);
-  width: 100vw;
+  max-width: 100dvw;
 }
 
 main {
-  @apply px-8 relative h-screen mt-20;
+  @apply px-8 relative;
 }
 
 h1 {
@@ -30,7 +35,7 @@ h1 {
 }
 
 .page-main-section {
-  @apply mt-10 mb-20;
+  @apply mt-10;
 }
 
 .menu {
