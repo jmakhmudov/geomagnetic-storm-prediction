@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -8,9 +9,9 @@ export default function Home() {
     <main className="px-8 relative mb-14">
       <Navbar />
 
-      <div className="md:mt-[-30px] md:flex items-center justify-between">
+      <div className="md:mt-[-150px] md:flex items-center justify-between">
         <div className=" grid gap-11">
-          <h1 className="font-thin md:text-8xl">High intensity storm</h1>
+          <h1 className="font-thin md:text-7xl">High intensity storm</h1>
           <div className="hidden md:block">
             <p>Kp index</p>
             <h1 className="text-9xl font-thin">4</h1>
@@ -18,7 +19,14 @@ export default function Home() {
           </div>
         </div>
 
-        <img className="mt-4 w-[600px] scale-125 md:scale-100" src="/sun(1).svg" alt="sun" />
+        <Image
+          className="mr-[-50px] md:scale-[0.85]"
+          src="/sun(1).svg"
+          alt="sun"
+          width={400}
+          height={400}
+          layout="responsive"
+        />
 
         <div className="mb-16 text-sm md:hidden">
           <p className="opacity-50">Kp index</p>
