@@ -1,23 +1,33 @@
+"use client"
+
 import Navbar from "@/components/Navbar";
-import { UpdateIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
+
   return (
-    <main className="px-8 relative h-screen">
+    <main className="px-8 relative mb-14">
       <Navbar />
 
-      <div className="flex items-center justify-between">
-        <h1 className="font-light text-4xl text-left">Quiet period</h1>
-        <UpdateIcon className="cursor-pointer" />
+      <div className="md:mt-[-30px] md:flex items-center justify-between">
+        <div className=" grid gap-11">
+          <h1 className="font-thin md:text-8xl">High intensity storm</h1>
+          <div className="hidden md:block">
+            <p>Kp index</p>
+            <h1 className="text-9xl font-thin">4</h1>
+            <p className="opacity-50">16:56 UTC</p>
+          </div>
+        </div>
+
+        <img className="mt-4 w-[600px] scale-125 md:scale-100" src="/sun(1).svg" alt="sun" />
+
+        <div className="mb-16 text-sm md:hidden">
+          <p className="opacity-50">Kp index</p>
+          <h1 className="text-9xl font-thin">4</h1>
+          <p className="opacity-50">16:56 UTC</p>
+        </div>
       </div>
 
-      <img className="w-[600px]" src="/sun(1).svg" alt="sun" />
-
-      <div className="absolute bottom-10 text-sm z-10">
-        <p>Kp index</p>
-        <h1 className="text-9xl font-thin">4</h1>
-        <p className="opacity-50">16:56 UTC</p>
-      </div>
+      <p className="max-w-lg opacity-60">The K-index, and by extension the Planetary K-index, are used to characterize the magnitude of geomagnetic storms. Kp is an excellent indicator of disturbances in the Earth's magnetic field and is used by SWPC to decide whether geomagnetic alerts and warnings need to be issued for users who are affected by these disturbances.</p>
     </main>
   )
 }

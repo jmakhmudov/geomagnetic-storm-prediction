@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="py-4 px-8 flex justify-between items-center bg-[#03000F] fixed top-0 left-0 right-0 z-50">
+        <nav className="py-4 px-8 flex justify-between items-center bg-[#03000f] fixed top-0 left-0 right-0 z-50">
             <Link href="/" className="font-orbitron text-xl z-50 cursor-pointer">
                 GEOMAG
             </Link>

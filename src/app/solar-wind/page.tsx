@@ -86,7 +86,6 @@ const SolarWind = () => {
                     <div className="mt-16 lg:mt-0">
                         <h2 className="font-semibold mb-4">Latest 24 hours</h2>
                         <img className="w-sm lg:w-[800px]" src="https://services.swpc.noaa.gov/images/geospace/geospace_1_day.png" alt="graph" />
-
                     </div>
                 </section>
 

@@ -41,8 +41,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-rgb);
-  max-width: 100dvw;
-  overflow-x: hidden;
 }
 
 main {
