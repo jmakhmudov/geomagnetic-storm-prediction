@@ -79,7 +79,7 @@ export default function Home() {
           layout="responsive"
         />
 
-        <div className="mt-16 text-sm md:hidden">
+        <div className="mt-24 text-sm md:hidden">
           {
             kp[1] ?
               <>
