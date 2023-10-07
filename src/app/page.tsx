@@ -32,7 +32,7 @@ export default function Home() {
       <Navbar />
 
       <div className="h-screen md:flex items-center justify-between">
-        <div className=" gap-11 hidden md:grid">
+        <div className=" gap-11 hidden md:grid ">
           {
             kp[1] ?
               <>
@@ -79,7 +79,7 @@ export default function Home() {
           layout="responsive"
         />
 
-        <div className="mb-16 text-sm md:hidden">
+        <div className="mt-16 text-sm md:hidden">
           {
             kp[1] ?
               <>
