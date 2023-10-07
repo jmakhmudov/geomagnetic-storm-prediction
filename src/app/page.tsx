@@ -21,10 +21,14 @@ const stormType = [
 
 export default function Home() {
   const [kp, setKp] = useState([]);
+  const [speed, setSpeed] = useState([]);
 
   useEffect(() => {
     axios.get("https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json")
       .then(res => setKp(res.data.slice(-1)[0]))
+    
+    axios.get("https://services.swpc.noaa.gov/products/solar-wind/plasma-5-minute.json")
+      .then(res => setSpeed(res.data[res.data.length - 1]))
   }, []);
 
   return (
@@ -42,7 +46,7 @@ export default function Home() {
                   <div>
                     <p>Kp index</p>
                     <h1 className="text-9xl font-bold">{kp[1]}</h1>
-                    <p className="opacity-50">Now</p>
+                    <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
                   </div>
                   <div>
                     <div>
@@ -88,7 +92,7 @@ export default function Home() {
                   <div>
                     <p>Kp index</p>
                     <h1 className="text-7xl font-bold">{kp[1]}</h1>
-                    <p className="opacity-50">Now</p>
+                    <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
                   </div>
                   <div>
                     <div>
