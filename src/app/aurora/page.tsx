@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 const Aurora = () => {
 
     return (
-        <main>
+        <main className="mt-20">
             <Navbar />
             <section className="page-main-section">
                 <h1>Aurora - 30 Minute Forecast</h1>

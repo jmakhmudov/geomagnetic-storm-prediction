@@ -60,7 +60,7 @@ const SolarWind = () => {
 
 
     return (
-        <main>
+        <main className="mt-20">
             <Navbar />
             <section className="page-main-section">
                 <div className="flex items-center justify-between lg:max-w-xs">
