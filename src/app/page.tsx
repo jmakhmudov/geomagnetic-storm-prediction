@@ -1,21 +1,35 @@
 "use client"
 
 import Navbar from "@/components/Navbar";
+import { Skeleton } from "@/components/ui/skeleton";
+import axios from "axios";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [kp, setKp] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json")
+      .then(res => setKp(res.data.slice(-1)[0]))
+  }, []);
 
   return (
     <main className="px-8 relative mb-14">
       <Navbar />
 
-      <div className="md:mt-[-150px] md:flex items-center justify-between">
+      <div className="h-screen md:flex items-center justify-between">
         <div className=" grid gap-11">
           <h1 className="font-thin md:text-7xl">High intensity storm</h1>
           <div className="hidden md:block">
             <p>Kp index</p>
-            <h1 className="text-9xl font-thin">4</h1>
-            <p className="opacity-50">16:56 UTC</p>
+            {
+              kp[1] ?
+                <h1 className="text-9xl font-bold">{kp[1]}</h1>
+                :
+                <Skeleton className="my-2 w-36 h-24" />
+            }
+            <p className="opacity-50">Now</p>
           </div>
         </div>
 
@@ -30,8 +44,13 @@ export default function Home() {
 
         <div className="mb-16 text-sm md:hidden">
           <p className="opacity-50">Kp index</p>
-          <h1 className="text-9xl font-thin">4</h1>
-          <p className="opacity-50">16:56 UTC</p>
+          {
+            kp[1] ?
+              <h1 className="text-7xl font-bold">{kp[1]}</h1>
+              :
+              <Skeleton className="w-20 h-10" />
+          }
+          <p className="opacity-50">Now</p>
         </div>
       </div>
 
