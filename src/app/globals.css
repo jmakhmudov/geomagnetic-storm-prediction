@@ -45,7 +45,7 @@ body {
 }
 
 main {
-  @apply px-8 pt-20;
+  @apply px-8 pt-16 md:pt-10;
 }
 
 h1 {
