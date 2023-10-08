@@ -43,9 +43,6 @@ const Navbar = () => {
                     <Link onClick={toggleMenu} className="navlinks" href="/aurora">
                         Aurora
                     </Link>
-                    <Link onClick={toggleMenu} className="navlinks" href="/about">
-                        About
-                    </Link>
                 </ul>
 
                 <p className="absolute bottom-5">by <span className="font-orbitron">WYEDUST</span></p>

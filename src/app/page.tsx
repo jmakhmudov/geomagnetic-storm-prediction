@@ -56,6 +56,7 @@ export default function Home() {
                       <p className="opacity-50 text-sm">Kp index</p>
                       <h1 className="text-5xl font-thin">{kp[1]}</h1>
                       <p className="opacity-50 text-sm">Now</p>
+                      <div className="mt-4 text-2xl text-red-400"></div>
                     </div>
                     
                   </div>
