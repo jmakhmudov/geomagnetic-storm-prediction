@@ -11,7 +11,7 @@ const stormType = [
   "Quiet period",
   "Quiet period",
   "Quiet period",
-  "Quiet period",
+  "Mid activity",
   "Mid activity",
   "Mid activity",
   "High intensity storm",
@@ -19,7 +19,10 @@ const stormType = [
   "High intensity storm",
 ]
 
+const kps = [1.33, 2.00, 1.67];
+
 export default function Home() {
+  const [pr, setPr] = useState([]);
   const [kp, setKp] = useState([]);
   const [speed, setSpeed] = useState([]);
 
@@ -45,7 +48,7 @@ export default function Home() {
                 <section className="gap-10 flex">
                   <div>
                     <p>Kp index</p>
-                    <h1 className="text-9xl font-bold">{kp[1]}</h1>
+                    <h1 className="text-9xl font-bold">1.33</h1>
                     <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
                   </div>
                   <div>
@@ -54,7 +57,7 @@ export default function Home() {
                       <h1 className="text-5xl font-thin">{kp[1]}</h1>
                       <p className="opacity-50 text-sm">Now</p>
                     </div>
-                    <div className="mt-4 text-2xl text-green-400">+1.33</div>
+                    
                   </div>
                 </section>
 
@@ -91,7 +94,7 @@ export default function Home() {
                 <section className="gap-10 flex items-center justify-between md:hidden mt-4">
                   <div>
                     <p>Kp index</p>
-                    <h1 className="text-7xl font-bold">{kp[1]}</h1>
+                    <h1 className="text-7xl font-bold">1.33</h1>
                     <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
                   </div>
                   <div>
@@ -100,7 +103,7 @@ export default function Home() {
                       <h1 className="text-4xl font-thin">{kp[1]}</h1>
                       <p className="opacity-50 text-sm">Now</p>
                     </div>
-                    <div className="mt-2 text-xl text-green-400">+1.33</div>
+                    
                   </div>
                 </section>
               </>
