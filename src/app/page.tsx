@@ -29,7 +29,7 @@ export default function Home() {
       .then(res => setKp(res.data.slice(-1)[0]));
 
     axios.get("/api/predict")
-      .then(res => setPred(res.data.prediction));
+      .then(res => {res.data.prediction > 9 ? setPred(9.00) : setPred(res.data.prediction)});
   }, []);
 
   return (
