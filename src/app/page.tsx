@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/components/Navbar";
+import ChangedKp from "@/components/ui/changedKp";
 import { Skeleton } from "@/components/ui/skeleton";
 import axios from "axios";
 import Image from "next/image";
@@ -19,19 +20,16 @@ const stormType = [
   "High intensity storm",
 ]
 
-const kps = [1.33, 2.00, 1.67];
-
 export default function Home() {
-  const [pr, setPr] = useState([]);
+  const [pred, setPred] = useState(0.00);
   const [kp, setKp] = useState([]);
-  const [speed, setSpeed] = useState([]);
 
   useEffect(() => {
     axios.get("https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json")
-      .then(res => setKp(res.data.slice(-1)[0]))
-    
-    axios.get("https://services.swpc.noaa.gov/products/solar-wind/plasma-5-minute.json")
-      .then(res => setSpeed(res.data[res.data.length - 1]))
+      .then(res => setKp(res.data.slice(-1)[0]));
+
+    axios.get("/api/predict")
+      .then(res => setPred(res.data.prediction));
   }, []);
 
   return (
@@ -48,17 +46,17 @@ export default function Home() {
                 <section className="gap-10 flex">
                   <div>
                     <p>Kp index</p>
-                    <h1 className="text-9xl font-bold">1.33</h1>
-                    <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
+                    <h1 className="text-9xl font-bold">{pred}</h1>
+                    <p className="opacity-50">Next 3 hours</p>
                   </div>
                   <div>
                     <div>
                       <p className="opacity-50 text-sm">Kp index</p>
                       <h1 className="text-5xl font-thin">{kp[1]}</h1>
                       <p className="opacity-50 text-sm">Now</p>
-                      <div className="mt-4 text-2xl text-red-400"></div>
+                      <ChangedKp num={pred-Number(kp[1])}/>
                     </div>
-                    
+
                   </div>
                 </section>
 
@@ -95,16 +93,17 @@ export default function Home() {
                 <section className="gap-10 flex items-center justify-between md:hidden mt-4">
                   <div>
                     <p>Kp index</p>
-                    <h1 className="text-7xl font-bold">1.33</h1>
-                    <p className="opacity-50">Next {Math.round(1.51e6/Number(speed[2])/60)} min</p>
+                    <h1 className="text-7xl font-bold">{pred}</h1>
+                    <p className="opacity-50">Next 3 hours</p>
                   </div>
                   <div>
                     <div>
                       <p className="opacity-50 text-sm">Kp index</p>
                       <h1 className="text-4xl font-thin">{kp[1]}</h1>
                       <p className="opacity-50 text-sm">Now</p>
+                      <ChangedKp num={pred-Number(kp[1])}/>
                     </div>
-                    
+
                   </div>
                 </section>
               </>
